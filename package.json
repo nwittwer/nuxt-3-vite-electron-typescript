@@ -1,0 +1,26 @@
+{
+  "name": "my_app",
+  "version": "1.0.0",
+  "description": "This is a sample",
+  "license": "MIT",
+  "workspaces": [
+    "electron",
+    "app"
+  ],
+  "scripts": {
+    "start": "concurrently -k \"yarn serve:front\" \"yarn electron:watch\"",
+    "build": "tsc",
+    "electron:watch": "cd electron && yarn watch",
+    "front:setup": "cd app && yarn",
+    "electron:setup": "yarn",
+    "setup": "yarn front:setup && yarn electron:setup",
+    "serve:front": "cd app && yarn dev",
+    "build:front": "cd app && yarn build",
+    "app:build": "yarn build:front && cd electron && yarn electron:build && yarn electron:builder"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "typescript": "^4.9.4"
+  },
+  "packageManager": "yarn@3.5.0"
+}

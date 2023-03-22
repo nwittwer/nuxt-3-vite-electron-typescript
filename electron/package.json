@@ -1,0 +1,31 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "This is a sample",
+  "main": "./dist/main.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "nodemon --exec yarn serve:electron",
+    "serve:electron": "yarn build && wait-on tcp:3000 && electron .",
+    "electron:build": "yarn build",
+    "electron:builder": "electron-builder --config builder.config.js",
+    "electron-rebuild": "./node_modules/.bin/electron-rebuild"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "electron": "23.1.4",
+    "electron-builder": "^23.6.0",
+    "electron-devtools-installer": "^3.2.0",
+    "json": "^11.0.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4",
+    "wait-on": "^7.0.1"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^5.3.0"
+  }
+}
