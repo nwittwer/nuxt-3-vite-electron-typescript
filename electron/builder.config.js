@@ -50,9 +50,16 @@ module.exports = {
   // Files to include in the build
   files: [
     "package.json",
+    // The Electron files
     {
-      from: "../dist",
-      to: "dist",
+      from: "../electron/dist",
+      to: "dist/electron",
+    },
+    // The Nuxt files
+    // Docs: https://nuxt.com/docs/getting-started/deployment#client-side-only-rendering
+    {
+      from: "../app/.output/public",
+      to: "dist/nuxt",
     },
   ],
 
