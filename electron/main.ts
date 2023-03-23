@@ -10,7 +10,7 @@ import { appConfig } from "./ElectronStore/Configuration";
 import AppUpdater from "./AutoUpdate";
 // import { isDev } from "./config";
 
-const isDev = require("electron-is-dev");
+import isDev from "electron-is-dev";
 
 async function createWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
@@ -35,14 +35,14 @@ async function createWindow() {
   const mainWindow = new BrowserWindow(BrowserWindowOptions);
 
   // auto updated
-  if (!isDev) AppUpdater();
+  // if (!isDev) AppUpdater();
 
   // and load the index.html of the app.
   // win.loadFile("index.html");
   await mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "./index.html")}`
+      : `file://${path.join(__dirname, "../nuxt/index.html")}`
   );
 
   if (
@@ -55,9 +55,9 @@ async function createWindow() {
   else mainWindow.show();
 
   // this will turn off always on top after opening the application
-  setTimeout(() => {
-    mainWindow.setAlwaysOnTop(false);
-  }, 1000);
+  // setTimeout(() => {
+  //   mainWindow.setAlwaysOnTop(false);
+  // }, 1000);
 
   // Open the DevTools.
   if (isDev) {
