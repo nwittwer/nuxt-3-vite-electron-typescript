@@ -2,7 +2,7 @@
   "name": "electron-app",
   "version": "1.0.0",
   "description": "This is a sample",
-  "main": "./dist/main.js",
+  "main": "./dist/electron/main.js",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
