@@ -6,7 +6,7 @@
 - Vite
 - TypeScript
 
-See: [`nuxt-3`](https://github.com/nwittwer/nuxt-3-vite-electron-typescript/tree/nuxt-3) branch for the initial fork and changes to get Nuxt 3 working. 
+See: [`nuxt-3`](https://github.com/nwittwer/nuxt-3-vite-electron-typescript/tree/nuxt-3) and [`vue-3`](https://github.com/nwittwer/nuxt-3-vite-electron-typescript/tree/vue-3) branches for the changes to get Nuxt 3 working. 
 
 ### Credits
 
