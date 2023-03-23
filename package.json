@@ -16,7 +16,8 @@
     "setup": "yarn front:setup && yarn electron:setup",
     "serve:front": "cd app && yarn dev",
     "build:front": "cd app && yarn build",
-    "app:build": "yarn build:front && cd electron && yarn electron:build && yarn electron:builder"
+    "app:build": "yarn build:front && cd electron && yarn electron:build && yarn electron:builder",
+    "debug:build:m1": "./build/mac-arm64/electron-app.app/Contents/MacOS/electron-app --args --remote-debugging-port=8315 & open -a \"Google Chrome\" http://localhost:8315"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
